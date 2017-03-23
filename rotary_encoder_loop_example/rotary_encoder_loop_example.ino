@@ -1,8 +1,10 @@
 /*
   rotary_encoder_loop_example.ino - simple loop rotary encoder input example for use with PCF8574 I2C expander library.
+  Bonus: https://github.com/StoneAgeSkillz/PCF8574/upload/master/rotary_encoder_interrupt_example/rotary_encoder_interrupt_example.png
+  No need to wire INT for this example.
   https://github.com/StoneAgeSkillz/PCF8574
   Created by StoneAgeSkillz
-  Released into the public domain.  
+  Released into the public domain.
 */
 
 // I2C BUS
@@ -43,21 +45,21 @@ void loop() {
   int pin_A_state = expander.readPin(PINA);
   int pin_B_state = expander.readPin(PINB);
 
-  if(pin_A_prev_state == 1 && pin_B_prev_state == 1){ //if they wereboth up in previous loop 
+  if(pin_A_prev_state == 1 && pin_B_prev_state == 1){ //if they wereboth up in previous loop
     if (pin_A_state == true && pin_B_state == false) { // if pin B is now down
         encoder_pos++;
       }
       if (pin_A_state == false && pin_B_state == true) { // if A is now down
         encoder_pos--;
-      } 
-      
-      Serial.println(String(encoder_pos)); // if it counts in wrong direction, just switch pin A and B   
+      }
+
+      Serial.println(String(encoder_pos)); // if it counts in wrong direction, just switch pin A and B
   }
 
   if(expander.readPin(BUTTON) == true){ Serial.println("BUTTON!");} // if setPin = HIGH, rewrite true to false
 
   //store states
-  pin_A_prev_state = pin_A_state; 
+  pin_A_prev_state = pin_A_state;
   pin_B_prev_state = pin_B_state;
-   
+
 }
