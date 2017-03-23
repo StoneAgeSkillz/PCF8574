@@ -1,0 +1,6 @@
+PCF8574			KEYWORD1
+i2cWrite 	  KEYWORD2
+setPin			KEYWORD2
+togglePin		KEYWORD2
+i2cRead	    KEYWORD2
+readPin     KEYWORD2
