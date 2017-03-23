@@ -1,3 +1,9 @@
+/*
+  PCF8574_input_example.ino - input example for use with PCF8574 I2C expander library.
+  https://github.com/StoneAgeSkillz/PCF8574
+  Created by StoneAgeSkillz
+  Released into the public domain.
+*/
 // I2C BUS
 #include <Wire.h>
 #include <PCF8574.h>
@@ -14,15 +20,19 @@ void setup() {
   Wire.begin(); // i2c
   Serial.println("i2c start");
 
-  expander.setPin( 8, HIGH); // setPin(PCF8574 address, pin number or 8 = ALL pins, set pin state to HIGH/LOW);
+  expander.setPin( 8, LOW); // setPin(PCF8574 address, pin number or 8 = ALL pins, set pin state to HIGH/LOW);
   // set pins to LOW, if triggered to GND logical 0 goes to 1
   // if pins set to HIGH, if triggered to + logical 1 goes to 0
 }
 
 void loop() {
 
-  Serial.print(String(expander.readPin(5))); // read input 5, returns 0 or 1
-  Serial.print("/");
+  for(int i = 0; i < 8; i++){
+    Serial.print("pin"+String(i)+": ");
+    Serial.print(String(expander.readPin(i))); // read input i, returns 0 or 1
+    Serial.print("/");
+  }
+
   Serial.println(String(expander.readPin(8), BIN)); // read all inputs, returns 0-255
 
 }
