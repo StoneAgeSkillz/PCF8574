@@ -1,6 +1,6 @@
 /*
   rotary_encoder_loop_example.ino - simple loop rotary encoder input example for use with PCF8574 I2C expander library.
-  Bonus: https://github.com/StoneAgeSkillz/PCF8574/upload/master/rotary_encoder_interrupt_example/rotary_encoder_interrupt_example.png
+  Bonus: https://github.com/StoneAgeSkillz/PCF8574/blob/master/rotary_encoder_interrupt_example/rotary_encoder_interrupt_example.png
   No need to wire INT for this example.
   https://github.com/StoneAgeSkillz/PCF8574
   Created by StoneAgeSkillz
