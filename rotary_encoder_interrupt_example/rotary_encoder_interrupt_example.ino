@@ -2,7 +2,7 @@
   rotary_encoder_interrupt_example.ino - rotary encoder input example  for use with PCF8574 I2C expander library.
   Utilizing interrupt to maximise performance. *If you can't impress them with you knowledge, baffle them with your bullshit.*
   Anyway, this is one way to do it.
-  Bonus: https://github.com/StoneAgeSkillz/PCF8574/upload/master/rotary_encoder_interrupt_example/rotary_encoder_interrupt_example.png
+  Bonus: https://github.com/StoneAgeSkillz/PCF8574/blob/master/rotary_encoder_interrupt_example/rotary_encoder_interrupt_example.png
   https://github.com/StoneAgeSkillz/PCF8574
   Created by StoneAgeSkillz
   Released into the public domain.
