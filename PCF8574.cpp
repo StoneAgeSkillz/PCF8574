@@ -1,8 +1,10 @@
 /*
   PCF8574.cpp - PCF8574 I2C expander library.
-  Created by StoneAgeSkillz, 2017-09-03
+	https://github.com/StoneAgeSkillz/PCF8574
+  Created by StoneAgeSkillz
   Released into the public domain.
 */
+
 #include "Arduino.h"
 #include <Wire.h>
 #include "PCF8574.h"
