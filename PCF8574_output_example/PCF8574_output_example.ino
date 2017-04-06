@@ -11,52 +11,48 @@ void setup() {
 
   Wire.begin(); // i2c
 
-  expander.setPin( 8, HIGH); // setPin(PCF8574 address, pin number or 8 = ALL pins, set pin state to HIGH/LOW); 
+  expander.setP( 8, HIGH); // setPin(PCF8574 address, pin number or 8 = ALL pins, set pin state to HIGH/LOW); 
   delay(3000);
 }
 
 void loop() {
   for(int i = 8; i >= 0; i--){
-    expander.setPin( i, HIGH);
+    expander.setP( i, HIGH);
     delay(DELAY);
   }
 
-  expander.setPin( 8, HIGH);
-  
+  expander.setP( 8, HIGH);
+
   for(int i = 7; i >= 0; i--){
-    expander.setPin( i, LOW);
-    delay(DELAY);
-  }
-  
-  for(int i = 0; i < 8; i++){
-    expander.setPin( i, HIGH);
+    expander.setP( i, LOW);
     delay(DELAY);
   }
 
   for(int i = 0; i < 8; i++){
-    expander.setPin( i, LOW);
+    expander.setP( i, HIGH);
+    delay(DELAY);
+  }
+
+  for(int i = 0; i < 8; i++){
+    expander.setP( i, LOW);
     delay(DELAY);
   }
 
   for(int x = 0; x < 8; x++){
     for(int i = 0; i < 10; i++){
-    
-    expander.setPin( x, LOW);
+
+    expander.setP( x, LOW);
     delay(DELAY);
-    expander.setPin( x, HIGH);
+    expander.setP( x, HIGH);
     delay(DELAY);
     }
-    expander.setPin( x, LOW);
+    expander.setP( x, LOW);
   }
 
   for(int i = 0; i < 8; i++){
     for(int x = 0; x < 8; x++){
-      expander.togglePin( x);
+      expander.toggleP( x);
       delay(DELAY);
     }
   }
 }
-
-
-
-
