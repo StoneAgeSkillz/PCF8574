@@ -5,6 +5,7 @@
   Released into the public domain.
 */
 
+
 #include "Arduino.h"
 #include <Wire.h>
 #include "PCF8574.h"
@@ -22,7 +23,7 @@ void PCF8574::i2cWrite(byte _data)
   Wire.endTransmission();
 }
 
-void PCF8574::setPin( int pin, int data){
+void PCF8574::setP( int pin, int data){
 
   if(pin == 8){
     if(data == HIGH){ data = 255;}
@@ -44,7 +45,7 @@ void PCF8574::setPin( int pin, int data){
   }
 }
 
-void PCF8574::togglePin( int pin){
+void PCF8574::toggleP( int pin){
 	if(pin < 8){
 		_expander_state ^= (1 << pin);
 		i2cWrite(_expander_state);
@@ -64,7 +65,7 @@ byte PCF8574::i2cRead()
   return _data;
 }
 
-int PCF8574::readPin(int pin){
+int PCF8574::readP(int pin){
   int expReadData = 0;
 	int filtr = 1;
   expReadData = i2cRead();
@@ -81,3 +82,7 @@ int PCF8574::readPin(int pin){
 
   return expReadData;
 }
+
+// Preinstantiate Objects //////////////////////////////////////////////////////
+
+//PCF8574 expander = PCF8574(_address);
