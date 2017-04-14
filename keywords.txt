@@ -1,6 +1,11 @@
-PCF8574			KEYWORD1
-i2cWrite 	  KEYWORD2
-setP			KEYWORD2
-toggleP		KEYWORD2
-i2cRead	    KEYWORD2
-readP    KEYWORD2
+PCF8574			      KEYWORD1
+i2cWrite 	        KEYWORD2
+setP			        KEYWORD2
+toggleP		        KEYWORD2
+i2cRead	          KEYWORD2
+readP             KEYWORD2
+
+ENCODER 			    KEYWORD1
+init 	            KEYWORD2
+getMovement 	    KEYWORD2
+getButton         KEYWORD2

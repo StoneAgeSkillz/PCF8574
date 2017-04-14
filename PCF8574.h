@@ -27,4 +27,24 @@ class PCF8574
 
 };
 
+class ENCODER : public PCF8574
+{
+  private:
+    bool pin_A_prev_state; // saved state of pin A
+    bool pin_B_prev_state; // saved state of pin B
+    int _pinA;
+    int _pinB;
+    int _button;
+    //PCF8574(address);
+
+  public:
+    ENCODER(int expander_address, int pinA, int pinB, int button);
+    void init(int state);
+  	int getMovement();
+    bool getButton();
+    int _address;
+    //using PCF8574::setP;
+
+};
+
 #endif
