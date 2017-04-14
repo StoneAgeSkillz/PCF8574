@@ -27,6 +27,4 @@ class PCF8574
 
 };
 
-extern PCF8574 PCF8574;
-
 #endif
