@@ -5,9 +5,9 @@ Available commands:
 
 If we want to control PCF8574, we need to create an instance of PCF8574:
 
-  ****PCF8574 expander(EXP_ADDRESS);
+  PCF8574 expander(EXP_ADDRESS);
 
-    - We are creating an instance named expander for PCF8574 @ address 0b0100/A2/A1/A0, to GND = 0, to LOGIC (3,3V;5V) = 1
+  - We are creating an instance named expander for PCF8574 @ address 0b0100/A2/A1/A0, to GND = 0, to LOGIC (3,3V;5V) = 1
 
   Then we can use these commnads:
 
